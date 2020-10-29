@@ -16,4 +16,16 @@ public class Price {
         }
         return income;
     }
+
+    public static int totalIncome(int rows, int seatsRow) {
+        int income;
+        if (rows * seatsRow < 60) {
+            income = rows * seatsRow * 10;
+        } else {
+            int firstHalf = rows / 2;
+            int secondHalf = rows - firstHalf;
+            income = firstHalf * seatsRow * 10 + secondHalf * rows * 8;
+        }
+        return income;
+    }
 }
